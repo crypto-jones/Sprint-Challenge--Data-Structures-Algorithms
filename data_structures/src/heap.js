@@ -1,5 +1,18 @@
 const heapsort = arr => {
   /* Your code here */
+  const sortedHeap = [];
+  const newHeap = new Heap();
+
+  for (let i = 0; i < arr.length; i++) {
+    newHeap.insert(arr[i]);
+  }
+
+  for (i = 0; i < arr.length; i++) {
+    if (newHeap.size > 0) {
+      sortedHeap.unshift(newHeap.delete());
+    }
+  }
+  return sortedHeap;
 };
 
 class Heap {
